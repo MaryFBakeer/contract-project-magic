@@ -27,10 +27,10 @@ function Navbar({ user }) {
             <>
               <div className='navbar-reg'>
                 <div>
-                  <a href='/auth/authorization'>Авторизация</a>
+                  <a href='/user/login'>Авторизация</a>
                 </div>
                 <div>
-                  <a href='/auth/registration'>Регистрация</a>
+                  <a href='/user/registration'>Регистрация</a>
                 </div>
               </div>
             </>
