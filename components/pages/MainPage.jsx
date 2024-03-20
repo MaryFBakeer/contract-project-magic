@@ -1,10 +1,13 @@
 const React = require('react');
 const Layout = require('../Layout');
+const ContainerCard = require('../elements/ContainerCard');
 
-function MainPage({ user }) {
+function MainPage({ title, user, cards }) {
   return (
-    <Layout user = {user}>
-      <div>Привет</div>
+    <Layout user={user} title={title}>
+      <div className='mainPage'>
+        <ContainerCard cards={cards} />
+      </div>
     </Layout>
   );
 }
