@@ -15,6 +15,7 @@ function Layout({ title, children, user }) {
           href='https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap'
           rel='stylesheet'
         />
+        <script src='/scripts/logReg.js'></script>
       </head>
       <body>
         <Navbar user={user} />
