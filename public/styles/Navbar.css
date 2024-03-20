@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+#nav-mobile {
+  display: flex;
+  background-color: black;
+  justify-content: space-around;
+  margin: 0;
+}
+.navbar-user,
+.navbar-reg {
+  display: flex;
+  /* justify-content: space-around; */
+}
+
+.logo,
+.navbar-user a,
+.navbar-reg a,
+.userName {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin: 2rem 2rem;
+  text-decoration: none;
+}
+.logo {
+  font-size: 50px;
+  margin: 1rem;
+}
+.navbar-user a,
+.navbar-reg a,
+.userName {
+  font-size: 30px;
+}
+
+.logo:hover,
+.navbar-user a:hover,
+.navbar-reg a:hover {
+  color: rgba(191, 26, 224, 0.788);
+}
