@@ -1,6 +1,17 @@
 body {
   margin: 0;
-  font-family: 'Comfortaa', sans-serif;
+  /* font-family: 'Underdog', system-ui; */
+  font-family: 'DotGothic16', sans-serif;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.99)),
+    url(https://wallbox.ru/wallpapers/main/201204/fantastika-c79fc87d0305.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.logo {
+  font-family: 'Rubik Glitch Pop', system-ui;
 }
 
 #nav-mobile {
