@@ -1,14 +1,14 @@
 const jwt = require('jsonwebtoken');
-const generateTokens = require('../utils/authUtils');
+const authUtils = require('../utils/authUtils');
 
 function verifyRefreshToken(req, res, next) {
   try {
     // достаем refresh токен
     const { refresh } = req.cookies;
     // проверяем refresh token по секретному слову
-    const { user } = jwt.verify(refresh, 'R');
+    const { user } = jwt.verify(refresh, process.env.TOKEN_REFRESH);
     // генерируем новую пару токенов
-    const { accessToken, refreshToken } = generateTokens({
+    const { accessToken, refreshToken } = authUtils({
       user: { id: user.id, name: user.name },
     });
     // дополняем объект ответа userом
@@ -28,7 +28,7 @@ function verifyAccessToken(req, res, next) {
     // достаем access куку из запроса
     const { access } = req.cookies;
     // проверяем по секретному слову доступ к access и достаем usera
-    const { user } = jwt.verify(access, 'A');
+    const { user } = jwt.verify(access, process.env.TOKEN_ACCESS);
     // дополняем объект ответа userом
     res.locals.user = user;
     next();
