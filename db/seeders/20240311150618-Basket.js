@@ -14,6 +14,9 @@ module.exports = {
       {
         user_id: 4,
       },
+      {
+        user_id: 5,
+      },
     ].map((el) => ({
       ...el,
       createdAt: new Date(),
