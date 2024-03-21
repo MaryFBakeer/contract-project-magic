@@ -5,9 +5,12 @@ function Navbar({ user }) {
     <nav>
       <div className='nav-wrapper'>
         <div id='nav-mobile'>
-          <a href='/' className='logo'>
-            LOGO
-          </a>
+          <div class='sign'>
+            <span class='fast-flicker'>L</span>o<span class='flicker'>g</span>o
+          </div>
+          {/* <a href='/' className='logo'>
+           
+          </a> */}
           {user ? (
             <>
               <div className='navbar-user'>
