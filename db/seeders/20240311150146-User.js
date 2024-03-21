@@ -7,9 +7,11 @@ module.exports = {
     await queryInterface.bulkInsert('Users', [
       {
         name: 'Админ',
+        city: 'Санкт-Петербург'
       },
       {
         name: 'Маша',
+        city: 'Монштадт'
       },
       {
         name: 'Даня',
