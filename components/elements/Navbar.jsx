@@ -13,7 +13,7 @@ function Navbar({ user }) {
               <div className='navbar-user'>
                 <div className='userName'>Привет, {user.name}!</div>
                 <div>
-                  <a href='#'>Личный кабинет</a>
+                  <a href='/account'>Личный кабинет</a>
                 </div>
                 <div className='basket'>
                   <a href='/basket'>Корзина</a>
