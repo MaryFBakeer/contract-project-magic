@@ -1,9 +1,14 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "Magic", 
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "username": "admin",
+    "password": "XR55qpKZJ46wPiBYN3WTeYh5uIqBBhnG",
+    "database": "db_magic", 
+    "host": "dpg-cntvcp2cn0vc739eereg-a.frankfurt-postgres.render.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "rejectUnauthorized": false
+      }
+    }
   }
 }
