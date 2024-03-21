@@ -2,7 +2,7 @@ const React = require('react');
 
 function CardItem({ card }) {
   return (
-    <div className='cardItem'>
+    <div className='cardItem' data-id={card.id}>
       <p>{card.title}</p>
       <img src={card.img} alt='' />
       <p>{card.price} ₽</p>
