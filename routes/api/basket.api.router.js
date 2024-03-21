@@ -47,7 +47,7 @@ router.post('/add', async (req, res) => {
       const newOrder = await Order.create({
         basket_id: res.locals.user.id,
         status: false,
-        total_price: 0,
+        total_price: card.price,
       });
 
       const newLine = await Order_line.create({
@@ -55,12 +55,6 @@ router.post('/add', async (req, res) => {
         order_id: newOrder.id,
         count: 1,
       });
-
-      order.total_price += card.price;
-      await Order.update(
-        { total_price: order.total_price },
-        { where: { id: newOrder.id } },
-      );
 
       res.json({ message: 'success' });
     }
