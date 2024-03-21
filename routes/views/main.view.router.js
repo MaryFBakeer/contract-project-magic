@@ -20,7 +20,8 @@ router.get('/account', async (req, res) => {
   try {
     const user_id = res.locals.user.id;
     const userA = await User.findOne({ where: { id: user_id } });
-    res.send(res.renderComponent(Account, { title: 'Личный кабинет', userA }));
+    const cards = await Card.findAll({ where: { user_id: user_id } });
+    res.send(res.renderComponent(Account, { title: 'Личный кабинет', userA, cards }));
   } catch ({ message }) {
     res.status(200).json({ error: message });
   }

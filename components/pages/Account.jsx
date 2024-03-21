@@ -1,8 +1,9 @@
 const React = require('react');
 const Layout = require('../Layout');
 const FormAddCard = require('../elements/FormAddCard');
+const ContainerCard = require('../elements/ContainerCard');
 
-function Account({ title, userA, user }) {
+function Account({ title, userA, user, cards }) {
   return (
     <Layout title={title} user={user}>
       <h1>Личный кабинет</h1>
@@ -16,6 +17,7 @@ function Account({ title, userA, user }) {
       </div>
       <h3>Добавить карточку</h3>
       <FormAddCard />
+      <ContainerCard cards={cards}/>
     </Layout>
   );
 }
