@@ -19,7 +19,7 @@ module.exports = {
         onUpdate:'cascade',
       },
       status: {
-        type: Sequelize.TEXT
+        type: Sequelize.BOOLEAN
       },
       total_price: {
         type: Sequelize.INTEGER
