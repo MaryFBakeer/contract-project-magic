@@ -4,7 +4,7 @@ const MainPage = require('../../components/pages/MainPage');
 
 const FormUpdateAccount = require('../../components/elements/FormUpdateAccount');
 const { Card, User } = require('../../db/models');
-const cities = ['Санкт-Петербург', 'Москва', 'Челябинск', 'Трехгорный', 'Либерти-Сити', 'Вайтран', 'Новиград', 'Монштадт', 'Валь\'шара']
+const cities = ['Все города', 'Санкт-Петербург', 'Москва', 'Челябинск', 'Трехгорный', 'Либерти-Сити', 'Вайтран', 'Новиград', 'Монштадт', 'Валь\'шара']
 
 
 
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     const { user } = res.app.locals;
     const cards = await Card.findAll();
     res.send(
-      res.renderComponent(MainPage, { user, title: 'Главная страница', cards, cities, classForm: 'mainCityFormFilter' })
+      res.renderComponent(MainPage, { user, title: 'Главная страница', cards, cities, classForm: 'cityFilter' })
     );
   } catch ({ message }) {
     res.status(200).json({ error: message });
