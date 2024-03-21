@@ -41,6 +41,20 @@ router.post('/login', async (req, res) => {
 router.post('/registration', async (req, res) => {
   try {
     const { login, email, password, re_password } = req.body;
+    console.log(login);
+
+    if (
+      !login.trim() ||
+      !email.trim() ||
+      !password.trim() ||
+      !re_password.trim()
+    ) {
+      res.json({ message: 'inputs' });
+      return;
+    } else if (password !== re_password) {
+      res.json({ message: 'password' });
+      return;
+    }
 
     if (
       !login.trim() ||
