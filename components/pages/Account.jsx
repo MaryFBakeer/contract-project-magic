@@ -17,7 +17,7 @@ function Account({ title, userA, user, cards }) {
       </div>
       <h3>Добавить карточку</h3>
       <FormAddCard />
-      <ContainerCard cards={cards}/>
+      <ContainerCard cards={cards} user={user}/>
     </Layout>
   );
 }
