@@ -15,6 +15,7 @@ function Layout({ title, children, user }) {
           rel='stylesheet'
         />
         <script src='/scripts/logReg.js' defer></script>
+        <script src='/scripts/account.js' defer></script>
       </head>
       <body>
         <Navbar user={user} />
