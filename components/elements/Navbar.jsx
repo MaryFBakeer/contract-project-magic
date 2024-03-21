@@ -13,10 +13,7 @@ function Navbar({ user }) {
               <div className='navbar-user'>
                 <div className='userName'>Привет, {user.name}!</div>
                 <div>
-                  <a href='#'>Личный кабинет</a>
-                </div>
-                <div className='favorite'>
-                  <a href='/favorites'>Избранное</a>
+                  <a href='/account'>Личный кабинет</a>
                 </div>
                 <div>
                   <a href='/api/auth/logout'>Выйти</a>
