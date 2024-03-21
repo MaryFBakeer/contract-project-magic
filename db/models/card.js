@@ -12,7 +12,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Product.init({
     title: DataTypes.TEXT,
+    img: DataTypes.INTEGER,
     price: DataTypes.INTEGER,
+    degree: DataTypes.INTEGER,
     user_id: DataTypes.INTEGER,
   }, {
     sequelize,
