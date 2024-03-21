@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const authUtils = require('../../utils/authUtils');
 const jwtConfig = require('../../config/jwtConfig');
 
-const { User } = require('../../db/models');
+const { User, Basket } = require('../../db/models');
 
 router.post('/login', async (req, res) => {
   const { login, password } = req.body;
@@ -80,6 +80,8 @@ router.post('/registration', async (req, res) => {
         email,
         password: await bcrypt.hash(password, 10),
       });
+
+      const newBasket = await Basket.create({ user_id: newUser.id });
 
       const { accessToken, refreshToken } = authUtils({
         user: { id: newUser.id, email: newUser.email, name: newUser.name },
