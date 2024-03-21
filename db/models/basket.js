@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate({User, Order}) {
       // define association here
       this.belongsTo(User, { foreignKey: 'user_id' });
-      this.hasMany(Order, { foreignKey: 'order_id' });
+      this.hasMany(Order, { foreignKey: 'basket_id' });
     }
   }
   Basket.init({

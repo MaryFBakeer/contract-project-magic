@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const authUtils = require('../../utils/authUtils');
 const jwtConfig = require('../../config/jwtConfig');
 
-const { User } = require('../../db/models');
+const { User, Basket } = require('../../db/models');
 
 router.post('/login', async (req, res) => {
   const { login, password } = req.body;
@@ -56,6 +56,19 @@ router.post('/registration', async (req, res) => {
       return;
     }
 
+    if (
+      !login.trim() ||
+      !email.trim() ||
+      !password.trim() ||
+      !re_password.trim()
+    ) {
+      res.json({ message: 'inputs' });
+      return;
+    } else if (password !== re_password) {
+      res.json({ message: 'password' });
+      return;
+    }
+
     const user = await User.findOne({ where: { login } });
 
     if (user) {
@@ -67,6 +80,22 @@ router.post('/registration', async (req, res) => {
         email,
         password: await bcrypt.hash(password, 10),
       });
+
+      const newBasket = await Basket.create({ user_id: newUser.id });
+
+      const { accessToken, refreshToken } = authUtils({
+        user: { id: newUser.id, email: newUser.email, name: newUser.name },
+      });
+
+      res
+        .cookie(jwtConfig.refresh.type, refreshToken, {
+          maxAge: jwtConfig.refresh.expiresIn,
+          httpOnly: true,
+        })
+        .cookie(jwtConfig.access.type, accessToken, {
+          maxAge: jwtConfig.access.expiresIn,
+          httpOnly: true,
+        });
 
       res.json({ message: 'success' });
       return;

@@ -15,6 +15,9 @@ function Navbar({ user }) {
                 <div>
                   <a href='/account'>Личный кабинет</a>
                 </div>
+                <div className='favorite'>
+                  <a href='/favorites'>Избранное</a>
+                </div>
                 <div>
                   <a href='/api/user/logout'>Выйти</a>
                 </div>

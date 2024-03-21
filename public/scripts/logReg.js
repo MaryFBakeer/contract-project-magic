@@ -53,7 +53,7 @@ if (reg) {
 
       if (data.message === 'success') {
         alert('Регистрация прошла успешно!');
-        window.location.assign('/user/login');
+        window.location.assign('/');
       } else if (data.message === 'user') {
         alert('Пользователь уже существует!');
       } else if (data.message === 'password') {
