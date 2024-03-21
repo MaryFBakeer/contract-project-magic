@@ -1,6 +1,6 @@
 const React = require('react');
 
-function CardItem({ card }) {
+function CardItem({ card, user }) {
   return (
     <div className='cardItem'>
       <p>{card.title}</p>
@@ -8,7 +8,9 @@ function CardItem({ card }) {
       <p>{card.price} ₽</p>
       <p>{card.degree}</p>
       <p>Должен быть город</p>
-      <button className='addOrder'>Добавить</button>
+      {user && user.id !== card.user_id && (
+        <button className='addOrder'>Добавить</button>
+      )}
     </div>
   );
 }
