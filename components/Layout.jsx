@@ -17,6 +17,8 @@ function Layout({ title, children, user }) {
         <script src='/scripts/logReg.js' defer></script>
         <script src='/scripts/account.js' defer></script>
         <script src='/scripts/filterCity.js' defer></script>
+        <script src='/scripts/order.js' defer></script>
+        <script src='/scripts/card.js' defer></script>
       </head>
       <body>
         <Navbar user={user} />
