@@ -2,7 +2,7 @@ const React = require('react');
 
 function CardItem({ card, user }) {
   return (
-    <div className='cardItem' data-cardid={card.id}>
+    <div className='cardItem' data-id={card.id}>
       {user && card.user_id === user.id && (
         <>
           <img

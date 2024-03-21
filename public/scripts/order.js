@@ -1,4 +1,4 @@
-const container = document.querySelector('.containerCards');
+const container = document.querySelector('.container__cards');
 
 if (container) {
   container.addEventListener('click', async (e) => {
