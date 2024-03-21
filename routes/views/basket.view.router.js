@@ -7,7 +7,7 @@ const BasketPage = require('../../components/pages/BasketPage');
 router.get('/', async (req, res) => {
   try {
     const newOrder = await Order.findOne({
-      where: { basket_id: res.locals.user.id, status: 'false' },
+      where: { basket_id: res.locals.user.id, status: false },
       include: {
         model: Order_line,
         include: {
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
     });
 
     const completedOrders = await Order.findAll({
-      where: { basket_id: res.locals.user.id, status: 'true' },
+      where: { basket_id: res.locals.user.id, status: true },
       include: {
         model: Order_line,
         include: {

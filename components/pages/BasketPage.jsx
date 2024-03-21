@@ -8,10 +8,14 @@ function BasketPage({ title, user, newOrder, completedOrders }) {
         <p>Корзина</p>
         {newOrder ? (
           <div className='orders'>
-            <p>Заказ: {newOrder.id}</p>
+            <p>
+              Заказ: {newOrder.id} | Общая стоимость: {newOrder.total_price}
+            </p>
             <div className='cards'>
               {newOrder.Order_lines.map((card) => (
-                <p>{card.Card.title}</p>
+                <p>
+                  Товар: {card.Card.title} | Кол-во: {card.count}
+                </p>
               ))}
             </div>
           </div>
@@ -24,10 +28,14 @@ function BasketPage({ title, user, newOrder, completedOrders }) {
         {completedOrders ? (
           completedOrders.map((order) => (
             <div className='orders'>
-              <p>Заказ: {order.id}</p>
+              <p>
+                Заказ: {order.id} | Общая стоимость: {order.total_price}
+              </p>
               <div className='cards'>
                 {order.Order_lines.map((card) => (
-                  <p>{card.Card.title}</p>
+                  <p>
+                    Товар: {card.Card.title} | Кол-во: {card.count}
+                  </p>
                 ))}
               </div>
             </div>
