@@ -8,14 +8,13 @@ function Layout({ title, children, user }) {
         <title>{title}</title>
         <link rel='stylesheet' href='/styles/normalize.css' />
         <link rel='stylesheet' href='/styles/Navbar.css' />
-        <script defer src='/scripts/auth.js' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
         <link
           href='https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap'
           rel='stylesheet'
         />
-        <script src='/scripts/logReg.js'></script>
+        <script src='/scripts/logReg.js' defer></script>
       </head>
       <body>
         <Navbar user={user} />

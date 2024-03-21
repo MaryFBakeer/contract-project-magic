@@ -8,7 +8,7 @@ if (log) {
     const { login, password } = event.target;
 
     try {
-      const res = await fetch('/user/login', {
+      const res = await fetch('/api/user/login', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -36,7 +36,7 @@ if (reg) {
     const { login, email, password, re_password } = event.target;
 
     try {
-      const res = await fetch('/user/registration', {
+      const res = await fetch('/api/user/registration', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -53,11 +53,13 @@ if (reg) {
 
       if (data.message === 'success') {
         alert('Регистрация прошла успешно!');
-        window.location.assign('/login');
-      } else if (data.message === 'error') {
+        window.location.assign('/user/login');
+      } else if (data.message === 'user') {
         alert('Пользователь уже существует!');
       } else if (data.message === 'password') {
         alert('Пароли не совпадают!');
+      } else if (data.message === 'inputs') {
+        alert('Заполните все поля корректно!');
       } else {
         alert(data.message);
       }

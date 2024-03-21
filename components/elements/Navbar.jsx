@@ -3,7 +3,7 @@ const React = require('react');
 function Navbar({ user }) {
   return (
     <nav>
-      <div class='nav-wrapper'>
+      <div className='nav-wrapper'>
         <div id='nav-mobile'>
           <a href='/' className='logo'>
             LOGO
@@ -19,7 +19,7 @@ function Navbar({ user }) {
                   <a href='/favorites'>Избранное</a>
                 </div>
                 <div>
-                  <a href='/api/auth/logout'>Выйти</a>
+                  <a href='/api/user/logout'>Выйти</a>
                 </div>
               </div>
             </>
