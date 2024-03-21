@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Card } = require('../../db/models');
+const CardItem = require('../../components/elements/CardItem');
 
 router.post('/', async (req, res) => {
   try {
@@ -14,13 +15,11 @@ router.post('/', async (req, res) => {
     };
 
     const card = await Card.create(data);
-    console.log(card);
     if (card) {
-      const html = res.renderComponent(CardItem, card, { doctype: false });
+      const html = res.renderComponent(CardItem, { card }, { doctype: false });
+      console.log(html);
       res.status(201).json({ message: 'success', html });
       return;
-    } else {
-      res.json({ message: 'ДЕБИЛЫ' });
     }
   } catch ({ message }) {
     res.status(500).json({ error: message });

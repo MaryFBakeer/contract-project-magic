@@ -27,8 +27,11 @@ if (formAddCard) {
       });
       const res = await responce.json();
       if (res.message === 'success') {
-        formAddCard.reset();
-        document.querySelector('.container__cards').insertAdjacentHTML('beforeend', res.html);
+        // formAddCard.reset();
+        console.log(res.html);
+        let k = document.querySelector('.container__cards');
+        let f = k.insertAdjacentHTML('beforeend', res.html);
+        // document.querySelector('.container__cards').insertAdjacentHTML('beforeend', res.html);
       }
     }
   });
