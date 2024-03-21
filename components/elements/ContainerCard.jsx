@@ -3,9 +3,9 @@ const CardItem = require('./CardItem');
 
 function ContainerCard({ cards}) {
   return (
-    <div className='containerCards'>
+    <div className='container__cards'>
       {cards.map((card) => (
-        <CardItem card={card} />
+        <CardItem card={card}/>
       ))}
     </div>
   );
