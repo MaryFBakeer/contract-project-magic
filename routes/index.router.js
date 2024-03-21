@@ -4,9 +4,11 @@ const router = require('express').Router();
 const mainViewRouter = require('./views/main.view.router');
 const logRegViewRouter = require('./views/logreg.view.router');
 const logRegApiRouter = require('./api/logreg.api.router');
+const accountApiRouter = require('./api/account.api.router');
 
 //api
 router.use('/api/user', logRegApiRouter);
+router.use('/api/account', accountApiRouter);
 
 //router views
 router.use('/', mainViewRouter);
