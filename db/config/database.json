@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "admin",
-    "password": "XR55qpKZJ46wPiBYN3WTeYh5uIqBBhnG",
-    "database": "db_magic", 
-    "host": "dpg-cntvcp2cn0vc739eereg-a.frankfurt-postgres.render.com",
-    "dialect": "postgres",
+    "use_env_variable": "DATABASE_URL"
+  },
+
+  "production": {
+    "use_env_variable": "DATABASE_URL",
     "dialectOptions": {
       "ssl": {
         "rejectUnauthorized": false

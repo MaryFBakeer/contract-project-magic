@@ -41,7 +41,6 @@ router.post('/login', async (req, res) => {
 router.post('/registration', async (req, res) => {
   try {
     const { login, email, password, re_password } = req.body;
-    console.log(login);
 
     if (
       !login.trim() ||
@@ -67,6 +66,20 @@ router.post('/registration', async (req, res) => {
         email,
         password: await bcrypt.hash(password, 10),
       });
+
+      const { accessToken, refreshToken } = authUtils({
+        user: { id: newUser.id, email: newUser.email, name: newUser.name },
+      });
+
+      res
+        .cookie(jwtConfig.refresh.type, refreshToken, {
+          maxAge: jwtConfig.refresh.expiresIn,
+          httpOnly: true,
+        })
+        .cookie(jwtConfig.access.type, accessToken, {
+          maxAge: jwtConfig.access.expiresIn,
+          httpOnly: true,
+        });
 
       res.json({ message: 'success' });
       return;

@@ -1,17 +1,18 @@
+require('dotenv/config');
 const jwt = require('jsonwebtoken');
 // в конфиге можем настроить время жизни и название наших ключей
 const jwtConfig = require('../config/jwtConfig');
 
-const generateTokens = (payload) => ({
-  accessToken: jwt.sign(payload, 'A', {
+const authUtils = (payload) => ({
+  accessToken: jwt.sign(payload, process.env.TOKEN_ACCESS, {
     // здесь access и это восковый билет
     expiresIn: jwtConfig.access.expiresIn,
   }),
 
-  refreshToken: jwt.sign(payload, 'R', {
+  refreshToken: jwt.sign(payload, process.env.TOKEN_REFRESH, {
     // здесь рефреш и это наш чек
     expiresIn: jwtConfig.refresh.expiresIn,
   }),
 });
 
-module.exports = generateTokens;
+module.exports = authUtils;
