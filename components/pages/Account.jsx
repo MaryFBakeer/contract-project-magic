@@ -1,17 +1,20 @@
 const React = require('react');
-const Layout = require('./Layout');
+const Layout = require('../Layout');
+const FormAddCard = require('../elements/FormAddCard');
 
-function Account({ title, user }) {
+function Account({ title, userA, user }) {
   return (
-    <Layout title={title}>
+    <Layout title={title} user={user}>
       <h1>Личный кабинет</h1>
       <h2>Информация обо мне</h2>
-      <p>{user.name === '' ? 'Неизвестен' : user.name}</p>
-      <p>{user.login}</p>
-      <p>{user.email}</p>
-      <p>{user.city === '' ? 'Неизвестен' : user.city}</p>
-      <button>Изменить</button>
-      <p>Добавить карточку</p>
+      <div className='container_account'>
+        <p>{!userA.name ? 'Неизвестен' : userA.name}</p>
+        <p>{userA.login}</p>
+        <p>{userA.email}</p>
+        <p>{!userA.city ? 'Неизвестен' : userA.city}</p>
+        <button className='update-account'>Изменить</button>
+      </div>
+      <h3>Добавить карточку</h3>
       <FormAddCard />
     </Layout>
   );

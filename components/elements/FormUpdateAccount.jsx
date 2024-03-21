@@ -1,13 +1,13 @@
 const React = require('react');
 
-function FormUpdateAccount({ user }) {
+function FormUpdateAccount({ userA }) {
   return (
-    <form className='formUpdate-account'>
-      <input type='text' name='name' value={user.name} />
-      <input type='text' name='login' value={user.login} />
-      <input type='text' name='email' value={user.email} />
-      <input type='text' name='city' value={user.city} />
-      <button className='btn-update-account'>Изменить</button>
+    <form className='formUpdate-account' data-id={userA.id}>
+      <input type='text' name='name' value={userA.name} />
+      <input type='text' name='login' value={userA.login} />
+      <input type='text' name='email' value={userA.email} />
+      <input type='text' name='city' value={userA.city} />
+      <button className='btn-update-account'>Отправить</button>
     </form>
   );
 }

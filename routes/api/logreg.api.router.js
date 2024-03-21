@@ -3,12 +3,14 @@ const bcrypt = require('bcrypt');
 const authUtils = require('../../utils/authUtils');
 const jwtConfig = require('../../config/jwtConfig');
 
+const { User } = require('../../db/models');
+
 router.post('/login', async (req, res) => {
   const { login, password } = req.body;
 
   try {
     const user = await User.findOne({ where: { login } });
-    const isRight = await bcrypt.compare(password, user.pass);
+    const isRight = await bcrypt.compare(password, user.password);
 
     if (isRight) {
       res.locals.user = user;
@@ -39,28 +41,42 @@ router.post('/login', async (req, res) => {
 router.post('/registration', async (req, res) => {
   try {
     const { login, email, password, re_password } = req.body;
+    console.log(login);
+
+    if (
+      !login.trim() ||
+      !email.trim() ||
+      !password.trim() ||
+      !re_password.trim()
+    ) {
+      res.json({ message: 'inputs' });
+      return;
+    } else if (password !== re_password) {
+      res.json({ message: 'password' });
+      return;
+    }
 
     const user = await User.findOne({ where: { login } });
 
     if (user) {
-      res.json({ message: 'error' });
-    } else if (password !== re_password) {
-      res.json({ message: 'password' });
+      res.json({ message: 'user' });
+      return;
     } else {
       const newUser = await User.create({
         login,
         email,
-        pass: await bcrypt.hash(password, 10),
+        password: await bcrypt.hash(password, 10),
       });
 
       res.json({ message: 'success' });
+      return;
     }
   } catch (error) {
     res.json({ message: 'error', error });
   }
 });
 
-router.get('/user/logout', async (req, res) => {
+router.get('/logout', async (req, res) => {
   res.clearCookie(jwtConfig.access.type).clearCookie(jwtConfig.refresh.type);
   res.redirect('/');
 });
