@@ -1,12 +1,12 @@
 const container = document.querySelector('.containerCards');
 
 if (container) {
-  container.addEventListener('submit', async (e) => {
+  container.addEventListener('click', async (e) => {
     if (e.target.classList.contains('addOrder')) {
       const id = e.target.closest('.cardItem').dataset.id;
 
       try {
-        const res = await fetch(`/api/basket/${id}`, {
+        const res = await fetch(`/api/basket/add`, {
           method: 'POST',
           headers: {
             'content-type': 'application/json',
@@ -15,7 +15,7 @@ if (container) {
         });
         const data = await res.json();
         if (data.message == 'success') {
-          //   e.target.closest('.card').remove();
+          alert('Товар добавлен в заказ');
         }
       } catch (error) {
         alert(error.message);
