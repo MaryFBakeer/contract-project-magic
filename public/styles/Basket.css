@@ -33,7 +33,6 @@
   font-size: 26px;
   padding: 0 0 2rem 0;
 }
-
 .coc {
   font-size: 30px;
 }
@@ -42,38 +41,38 @@
   border-radius: 2rem;
   padding: 0.5rem;
   font-size: large;
-  font-family: 'Underdog', system-ui;
-width: 50%;
+  font-family: "Underdog", system-ui;
+  width: 50%;
   box-shadow: 0px 0px 15px rgba(173, 65, 40, 0.493);
   background: rgba(255, 228, 221, 0.349);
   border: none;
   margin: 1rem;
 }
+.removeItemButton:hover,
 .makeOrderButton:hover {
   background-color: black;
   color: white;
-  font-family: 'Underdog', system-ui; 
+  font-family: "Underdog", system-ui;
   box-shadow: 0px 0px 10px rgb(226, 71, 32);
 }
 
-.makeOrder{
+.makeOrder {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.gjhj{
- color: rgb(0, 0, 0);
+.gjhj {
+  color: rgb(0, 0, 0);
 }
-.gjhj:hover{
+.gjhj:hover {
   color: rgb(10, 207, 10);
 }
 
-
-.completedOrders .orders{
+.completedOrders .orders {
   padding: 10px 20px;
   /* width: 100%; */
-  font-family: 'Underdog', system-ui; 
+  font-family: "Underdog", system-ui;
   letter-spacing: -0.09em;
   background-color: #0e4b100c;
   color: rgb(88, 45, 4);
@@ -85,7 +84,18 @@ width: 50%;
   margin: 1rem;
 }
 
-
-.completedOrders .orders:hover{
+.completedOrders .orders:hover {
   box-shadow: inset 0 0 10px rgb(219, 189, 53);
+}
+
+.removeItemButton {
+  border-radius: 2rem;
+  padding: 0.5rem;
+  font-size: large;
+  font-family: "Underdog", system-ui;
+  /* width: 50%; */
+  box-shadow: 0px 0px 15px rgba(173, 65, 40, 0.493);
+  background: rgba(255, 228, 221, 0.349);
+  border: none;
+  margin: 1rem;
 }
