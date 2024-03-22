@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  /* font-family: 'Underdog', system-ui; */
-  font-family: 'DotGothic16', sans-serif;
+  font-family: 'Underdog', system-ui;
+  /* font-family: 'DotGothic16', sans-serif; */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
     url(https://img2.akspic.ru/crops/0/1/5/3/7/173510/173510-fentezi-planshet-art-drakon-mir-1920x1080.png);
   background-attachment: fixed;
@@ -51,5 +51,5 @@ body {
 .logo:hover,
 .navbar-user a:hover,
 .navbar-reg a:hover {
-  color: rgba(191, 26, 224, 0.788);
+  color: rgb(226, 71, 32);
 }

@@ -5,11 +5,11 @@ function BasketPage({ title, user, newOrder, completedOrders }) {
   return (
     <Layout user={user} title={title}>
       <div className='newOrder'>
-        <p>Корзина</p>
+        <p className='coc'>Корзина</p>
         {newOrder ? (
           <div className='orders'>
             <div className='cards'>
-              <p>
+              <p className='gjhj'>
                 Заказ: {newOrder.id} | Общая стоимость: {newOrder.total_price}
               </p>
               <form className='makeOrder'>
@@ -34,7 +34,7 @@ function BasketPage({ title, user, newOrder, completedOrders }) {
         )}
       </div>
       <div className='completedOrders'>
-        <p>Выполненные заказы</p>
+        <p className='coc'>Выполненные заказы</p>
         {completedOrders ? (
           completedOrders.map((order) => (
             <div className='orders'>

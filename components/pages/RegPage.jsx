@@ -7,15 +7,14 @@ function RegPage({ title }) {
     <>
       <Layout title={title}>
         <FormElem classForm={'registration'}>
-          <label>
-            Repeat password
-            <input name='re_password' type='password' required />
-          </label>
-          <label>
-            Email
-            <input name='email' type='email' required />
-          </label>
-          <button type='submit'>Зарегистрироваться</button>
+    
+         
+            <input name='re_password' type='password' required placeholder='password repeat'/>
+        
+
+            <input name='email' type='email' required placeholder='email'/>
+
+          <button className='btnreg' type='submit'>Зарегистрироваться</button>
         </FormElem>
       </Layout>
     </>

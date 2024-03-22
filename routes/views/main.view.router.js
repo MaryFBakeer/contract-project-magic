@@ -48,7 +48,7 @@ router.get('/account', async (req, res) => {
         title: 'Личный кабинет',
         userA,
         cards,
-        owner
+        owner,
       })
     );
   } catch ({ message }) {
@@ -62,7 +62,7 @@ router.get('/account/updateAc', async (req, res) => {
 
   const html = res.renderComponent(
     FormUpdateAccount,
-    { userA },
+    { userA, cities },
     { doctype: false }
   );
   res.status(201).json({ message: 'success', html });

@@ -12,6 +12,7 @@ function Layout({ title, children, user }) {
         <link rel='stylesheet' href='/styles/Logo.css' />
         <link rel='stylesheet' href='/styles/Filter.css' />
         <link rel='stylesheet' href='/styles/Basket.css' />
+        <link rel='stylesheet' href='/styles/LK.css' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
