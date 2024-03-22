@@ -36,7 +36,7 @@ function Layout({ title, children, user }) {
         <script src='/scripts/account.js' defer></script>
         <script src='/scripts/findAndFilter.js' defer></script>
         <script src='/scripts/order.js' defer></script>
-        <script src='/scripts/card.js' defer></script>
+        <script src='/scripts/card2.js' defer></script>
       </head>
       <body>
         <Navbar user={user} />
