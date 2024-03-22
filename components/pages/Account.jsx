@@ -3,7 +3,8 @@ const Layout = require('../Layout');
 const FormAddCard = require('../elements/FormAddCard');
 const ContainerCard = require('../elements/ContainerCard');
 
-function Account({ title, userA, user, cards }) {
+function Account({ title, userA, user, cards, owner }) {
+  console.log(userA);
   return (
     <Layout title={title} user={user}>
       <h1>Личный кабинет</h1>
@@ -12,12 +13,12 @@ function Account({ title, userA, user, cards }) {
         <p>{!userA.name ? 'Неизвестен' : userA.name}</p>
         <p>{userA.login}</p>
         <p>{userA.email}</p>
-        <p>{!userA.city ? 'Неизвестен' : userA.city}</p>
+        {/* <p>{!userA.city ? 'Неизвестен' : userA.city}</p> */}
         <button className='update-account'>Изменить</button>
       </div>
       <h3>Добавить карточку</h3>
       <FormAddCard />
-      <ContainerCard cards={cards} user={user}/>
+      <ContainerCard cards={cards} user={user} owner={owner} />
     </Layout>
   );
 }

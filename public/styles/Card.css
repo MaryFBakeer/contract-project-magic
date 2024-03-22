@@ -87,19 +87,23 @@
   margin: 5px 0 0 5px;
 }
 
-.addOrder {
+.addOrder,
+.btn-delete {
   border-radius: 2rem;
   padding: 1rem;
+  box-shadow: 0px 0px 15px rgba(226, 71, 32, 0.274);
+  background: rgba(255, 228, 221, 0.226);
+}
+
+.btn-delete {
+  padding: 1.5rem;
 }
 
 .infoCard .img {
   width: 10%;
 }
 
-.addOrder {
-  box-shadow: 0px 0px 15px rgba(226, 71, 32, 0.274);
-  background: rgba(255, 228, 221, 0.226);
-}
-.addOrder:hover {
+.addOrder:hover,
+.btn-delete:hover {
   box-shadow: 0px 0px 8px rgb(226, 71, 32);
 }

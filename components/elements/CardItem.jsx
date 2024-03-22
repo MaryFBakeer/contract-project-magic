@@ -19,8 +19,8 @@ function CardItem({ card, user, owner }) {
           <>
             <img
               className='btn-delete'
-              style={{ width: '25px', padding: '1px' }}
-              src='https://icon-icons.com/icons2/37/PNG/512/delete_4219.png'
+              style={{ width: '90px' }}
+              src='https://icon-icons.com/icons2/1863/PNG/512/cancel-presentation_119315.png'
               alt='delete'
             />
             {/* <a href={`/card/${card.id}/update`}>
