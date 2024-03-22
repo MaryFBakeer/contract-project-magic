@@ -10,6 +10,8 @@ function Layout({ title, children, user }) {
         <link rel='stylesheet' href='/styles/Navbar.css' />
         <link rel='stylesheet' href='/styles/Card.css' />
         <link rel='stylesheet' href='/styles/Logo.css' />
+        <link rel='stylesheet' href='/styles/Filter.css' />
+        <link rel='stylesheet' href='/styles/Basket.css' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />

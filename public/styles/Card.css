@@ -77,3 +77,7 @@
 .cardcss:hover::after {
   opacity: 1;
 }
+
+.infoCard{
+  margin: 5px 0 0 5px;
+}
