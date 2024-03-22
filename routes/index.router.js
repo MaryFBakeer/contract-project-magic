@@ -6,9 +6,10 @@ const logRegViewRouter = require('./views/logreg.view.router');
 const logRegApiRouter = require('./api/logreg.api.router');
 const accountApiRouter = require('./api/account.api.router');
 const filterApiRouter = require('./api/filterCity.api.router');
-const cardApiRouter = require('./api/card.api.router');
+const cardApiRouter = require('./api/card.api.router2');
 const basketViewRouter = require('./views/basket.view.router');
 const basketApiRouter = require('./api/basket.api.router');
+const erRouter = require('./views/404.router');
 
 
 //api
@@ -22,6 +23,7 @@ router.use('/api/card', cardApiRouter);
 router.use('/', mainViewRouter);
 router.use('/user', logRegViewRouter);
 router.use('/basket', basketViewRouter);
+router.use('/*', erRouter);
 
 // route api
 

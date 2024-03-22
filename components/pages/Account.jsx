@@ -1,6 +1,6 @@
 const React = require('react');
 const Layout = require('../Layout');
-const FormAddCard = require('../elements/FormAddCard');
+const FormAddCard = require('../elements/FormAddCard2');
 const ContainerCard = require('../elements/ContainerCard');
 
 function Account({ title, userA, user, cards, owner }) {
