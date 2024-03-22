@@ -1,4 +1,5 @@
 const container = document.querySelector('.container__cards');
+const form = document.querySelector('.makeOrder');
 
 if (container) {
   container.addEventListener('click', async (e) => {
@@ -20,6 +21,32 @@ if (container) {
       } catch (error) {
         alert(error.message);
       }
+    }
+  });
+}
+
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const obj = {};
+    data.forEach((value, key) => (obj[key] = value));
+
+    try {
+      const res = await fetch(`/api/basket/makeOrder`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+      });
+      const data = await res.json();
+      if (data.message == 'success') {
+        alert('Заказ оформлен');
+      }
+    } catch (error) {
+      alert(error.message);
     }
   });
 }
