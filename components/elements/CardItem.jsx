@@ -19,18 +19,22 @@ function CardItem({ card, user }) {
               src='https://icon-icons.com/icons2/37/PNG/512/delete_4219.png'
               alt='delete'
             />
-            <a href={`/card/${card.id}/update`}>
+            {/* <a href={`/card/${card.id}/update`}>
               <img
                 className='btn-update'
                 style={{ width: '30px', padding: '1px' }}
                 src='https://icon-icons.com/icons2/1558/PNG/512/353430-checkbox-edit-pen-pencil_107516.png'
                 alt='update'
               />
-            </a>
+            </a> */}
           </>
         )}
         {user && user.id !== card.user_id && (
-          <button className='addOrder'>Добавить</button>
+          <img
+            className='addOrder'
+            src='https://icon-icons.com/icons2/1336/PNG/512/picnicbasket_87270.png'
+            style={{ width: '90px' }}
+          />
         )}
       </div>
     </div>

@@ -8,9 +8,11 @@ function MainPage({ title, user, cards, cities, classForm }) {
   return (
     <Layout user={user} title={title}>
       <div className='mainPage'>
-        <SearchForm cities={cities} classForm={classForm}/>
-        <SearchName classForm='findName'/>
-        <ContainerCard cards={cards} user={user}/>
+        <div className='filterDiv'>
+          <SearchForm cities={cities} classForm={classForm} />
+          <SearchName classForm='findName' />
+        </div>
+        <ContainerCard cards={cards} user={user} />
       </div>
     </Layout>
   );
