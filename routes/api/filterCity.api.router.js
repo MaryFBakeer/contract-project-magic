@@ -4,6 +4,7 @@ const Container = require('../../components/elements/ContainerCard');
 
 router.post('/', async (req, res) => {
   let users;
+  const owner = await User.findAll();
   try {
     const { city } = req.body;
     if (city === 'Все города') {
@@ -19,7 +20,7 @@ router.post('/', async (req, res) => {
       ).flat();
       const html = res.renderComponent(
         Container,
-        { cards },
+        { cards, owner },
         { doctype: false },
       );
       res.status(200).json({ message: 'success', html });

@@ -2,9 +2,6 @@ const React = require('react');
 
 function CardItem({ card, user, owner }) {
   const ownerCard = owner.find(el => el.id === card.user_id)
-  console.log(ownerCard.city, 'city');
-  console.log(ownerCard.id, 'id');
-  console.log(card.user_id, 'card.user_id');
   return (
     <div className='cardItem' data-id={card.id}>
       <div className='cardcss'>
