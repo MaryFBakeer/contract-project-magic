@@ -62,7 +62,7 @@
 }
 
 .cardcss::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -76,6 +76,10 @@
 }
 .cardcss:hover::after {
   opacity: 1;
+}
+
+.nonvisible {
+  display: none;
 }
 
 .infoCard{
