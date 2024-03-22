@@ -2,8 +2,8 @@ body {
   margin: 0;
   /* font-family: 'Underdog', system-ui; */
   font-family: 'DotGothic16', sans-serif;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.99)),
-    url(https://wallbox.ru/wallpapers/main/201204/fantastika-c79fc87d0305.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
+    url(https://img2.akspic.ru/crops/0/1/5/3/7/173510/173510-fentezi-planshet-art-drakon-mir-1920x1080.png);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -51,3 +51,4 @@ body {
 .navbar-reg a:hover {
   color: rgba(191, 26, 224, 0.788);
 }
+
