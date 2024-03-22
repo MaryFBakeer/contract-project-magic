@@ -4,13 +4,13 @@ const ContainerCard = require('../elements/ContainerCard');
 const SearchForm = require('../elements/searchForm');
 const SearchName = require('../elements/searchName');
 
-function MainPage({ title, user, cards, cities, classForm }) {
+function MainPage({ title, user, cards, cities, classForm, owner }) {
   return (
     <Layout user={user} title={title}>
       <div className='mainPage'>
         <SearchForm cities={cities} classForm={classForm}/>
         <SearchName classForm='findName'/>
-        <ContainerCard cards={cards} user={user}/>
+        <ContainerCard cards={cards} user={user} owner={owner}/>
       </div>
     </Layout>
   );
