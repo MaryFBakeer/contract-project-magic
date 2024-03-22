@@ -1,8 +1,8 @@
 const React = require('react');
 const Layout = require('../Layout');
 const ContainerCard = require('../elements/ContainerCard');
-const SearchForm = require('../elements/searchForm');
-const SearchName = require('../elements/searchName');
+const SearchForm = require('../elements/SearchForm');
+const SearchName = require('../elements/SearchName');
 
 function MainPage({ title, user, cards, cities, classForm, owner }) {
   return (
