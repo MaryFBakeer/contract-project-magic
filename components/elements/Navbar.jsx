@@ -5,18 +5,18 @@ function Navbar({ user }) {
     <nav>
       <div className='nav-wrapper'>
         <div id='nav-mobile'>
-          <div class='sign'>
-            <span class='fast-flicker'>L</span>o<span class='flicker'>g</span>o
-          </div>
+          <a href='/' class='sign'>
+            <span class='fast-flicker'>M</span>a<span class='flicker'>gi</span>c
+          </a>
           {/* <a href='/' className='logo'>
            
           </a> */}
           {user ? (
             <>
               <div className='navbar-user'>
-                <div className='userName'>Привет, {user.name}!</div>
+                {/* <div className='userName'>Привет, {user.name}!</div> */}
                 <div>
-                  <a href='/account'>Личный кабинет</a>
+                  <a href='/account'>{user.name}</a>
                 </div>
                 <div className='basket'>
                   <a href='/basket'>Корзина</a>

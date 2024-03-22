@@ -17,15 +17,16 @@
   text-align: left;
 }
 
-.infoCard p{
-    color: white;
+.infoCard p {
+  color: white;
 }
 
-.city, .degree{
-    font-size: 13px;
+.city,
+.degree {
+  font-size: 13px;
 }
-.price{
-    font-size: 22px;
+.price {
+  font-size: 22px;
 }
 
 .cardcss {
@@ -34,11 +35,11 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 3rem 0;
-  /* box-shadow: 1px 2px 4px rgba(0, 0, 0.1, 0.4); */
+  padding: auto;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0.1, 0.4);
   border-radius: 20px;
   max-width: 350px;
-  margin: 50px;
+  margin: 3rem;
   text-align: center;
   position: relative;
   background: linear-gradient(
@@ -46,13 +47,14 @@
     rgba(255, 255, 255, 0.02),
     rgba(255, 255, 255, 0)
   );
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(105px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .cardcss img {
-  width: 300px;
+  width: 250px;
+  margin: 10px;
 }
 .cardcss .title {
   font-size: 23px;
@@ -67,15 +69,11 @@
   width: 100%;
   height: 100%;
   border-radius: 20px;
-  box-shadow: 0 8px 16px rgb(149, 20, 189);
+  box-shadow: 5px 8px 16px rgb(226, 71, 32);
   opacity: 0;
   transition: opacity 0.3s;
   z-index: -1;
 }
 .cardcss:hover::after {
   opacity: 1;
-}
-.cardcss {
-  position: relative;
-  /* Остальные стили */
 }
