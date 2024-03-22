@@ -20,24 +20,24 @@
 }
 .cityFilter div,
 .findName div {
-  font-size: 15px;
+  font-size: 25px;
   margin: auto 1rem;
 }
 
 option {
   color: rgb(250, 227, 197);
   background: rgb(48, 29, 16);
-  font-family: 'DotGothic16', sans-serif;
+  font-family: 'Underdog', system-ui;
 }
 
 #city {
   padding: 10px 20px;
-  font-family: 'DotGothic16', sans-serif;
+  font-family: 'Underdog', system-ui;
   letter-spacing: -0.09em;
   background-color: #0e4b100c;
   color: white;
   border: none;
-  font-size: 12px;
+  font-size: 19px;
   cursor: pointer;
   border-radius: 1rem;
   box-shadow: inset 0 0 10px rgba(168, 66, 7, 0.9);
@@ -46,12 +46,12 @@ option {
 .findName input {
   padding: 10px 20px;
   width: 100%;
-  font-family: 'DotGothic16', sans-serif;
+  font-family: 'Underdog', system-ui;
   letter-spacing: -0.09em;
   background-color: #0e4b100c;
   color: white;
   border: none;
-  font-size: 12px;
+  font-size: 19px;
   cursor: pointer;
   border-radius: 1rem;
   box-shadow: inset 0 0 10px rgba(168, 66, 7, 0.9);

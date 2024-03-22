@@ -13,19 +13,16 @@ if (updateButton) {
         container.addEventListener('submit', async (event) => {
           event.preventDefault();
           const { name, login, email, city } = event.target;
+          const citySelect = document.querySelector('#citySelect').value;
           const { id } = event.target.dataset;
-          if (
-            login.value.trim() === '' ||
-            email.value.trim() === '' ||
-            city.value.trim() === ''
-          ) {
+          if (login.value.trim() === '' || email.value.trim() === '') {
             alert('Заполните все поля');
           } else {
             const data = {
               name: name.value,
               login: login.value,
               email: email.value,
-              city: city.value,
+              city: citySelect,
             };
             const responce = await fetch(`/api/account/${id}/updateAc`, {
               method: 'PUT',

@@ -7,7 +7,7 @@ function LoginPage({ title }) {
     <>
       <Layout title={title}>
         <FormElem classForm={'login'}>
-          <button type='submit'>Войти</button>
+          <button className='btnaut' type='submit'>Войти</button>
         </FormElem>
       </Layout>
     </>

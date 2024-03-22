@@ -19,7 +19,7 @@ function CardItem({ card, user, owner }) {
           <>
             <img
               className='btn-delete'
-              style={{ width: '90px' }}
+              style={{ width: '60px' }}
               src='https://icon-icons.com/icons2/1863/PNG/512/cancel-presentation_119315.png'
               alt='delete'
             />
@@ -37,7 +37,7 @@ function CardItem({ card, user, owner }) {
           <img
             className='addOrder'
             src='https://icon-icons.com/icons2/1336/PNG/512/picnicbasket_87270.png'
-            style={{ width: '90px' }}
+            style={{ width: '60px' }}
           />
         )}
       </div>

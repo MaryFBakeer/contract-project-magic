@@ -1,0 +1,152 @@
+.accountPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.container_account {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.103),
+    rgba(255, 255, 255, 0)
+  );
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(105px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100%;
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.update-account {
+  border-radius: 2rem;
+  padding: 0.5rem;
+  font-family: 'Underdog', system-ui; 
+  box-shadow: 0px 0px 15px rgba(173, 65, 40, 0.493);
+  background: rgba(255, 228, 221, 0.349);
+  letter-spacing: -0.09em;
+  border: none;
+  font-size: 17px;
+  margin: 1rem;
+}
+
+.update-account:hover {
+  box-shadow: 0px 0px 8px rgb(226, 71, 32);
+}
+
+.formUpdate-account,
+.formAdd-card,
+.registration {
+  display: flex;
+  flex-direction: column;
+}
+
+.formUpdate-account input,
+#citySelect,
+.formAdd-card input,
+#selectDegree {
+  padding: 10px 20px;
+  /* width: 100%; */
+  font-family: 'Underdog', system-ui; 
+  letter-spacing: -0.09em;
+  background-color: #0e4b100c;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 10px rgb(226, 71, 32);
+  margin: 1rem;
+}
+
+.formAdd-card {
+  padding: 10px 20px;
+  font-family: 'Underdog', system-ui; 
+  letter-spacing: -0.09em;
+  background-color: #302823c5;
+  color: white;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 10px rgb(236, 105, 72);
+  margin: 1rem;
+}
+
+.btn-update-account,
+.btn-add-card {
+  border-radius: 2rem;
+  padding: 0.5rem;
+  font-family: 'Underdog', system-ui; 
+  box-shadow: 0px 0px 15px rgba(173, 65, 40, 0.493);
+  background: rgba(255, 228, 221, 0.349);
+  letter-spacing: -0.09em;
+  border: none;
+  font-size: 17px;
+  margin: 1rem;
+}
+
+.btn-update-account:hover,
+.btn-add-card:hover {
+  box-shadow: 0px 0px 8px rgb(226, 71, 32);
+}
+
+.formAdd-card input {
+  font-size: 17px;
+}
+
+.login,
+.registration {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 20px;
+  font-family: 'Underdog', system-ui; 
+  background-color: #302823c5;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 10px rgb(236, 105, 72);
+  margin: 1rem;
+}
+.login input,
+.registration input {
+  padding: 10px 20px;
+  /* width: 100%; */
+  font-family: 'Underdog', system-ui; 
+  background-color: #0e4b100c;
+  color: white;
+  border: none;
+  width: 200px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 10px rgb(226, 71, 32);
+  margin: 1rem;
+}
+
+.btnaut,
+.btnreg {
+  border-radius: 2rem;
+  padding: 0.5rem;
+  font-size: large;
+  font-family: 'Underdog', system-ui; 
+
+  box-shadow: 0px 0px 15px rgba(173, 65, 40, 0.493);
+  background: rgba(255, 228, 221, 0.349);
+  border: none;
+  margin: 1rem;
+}
+.btnaut:hover,
+.btnreg:hover {
+  background-color: black;
+  color: white;
+  font-family: 'Underdog', system-ui; 
+  box-shadow: 0px 0px 10px rgb(226, 71, 32);
+}
