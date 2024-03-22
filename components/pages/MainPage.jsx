@@ -12,6 +12,7 @@ function MainPage({ title, user, cards, cities, classForm, owner }) {
           <SearchForm cities={cities} classForm={classForm} />
           <SearchName classForm='findName' />
         </div>
+
         <ContainerCard cards={cards} user={user} owner={owner} />
       </div>
     </Layout>
