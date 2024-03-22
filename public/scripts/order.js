@@ -29,39 +29,20 @@ if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const selectedItems = Array.from(
-      document.querySelectorAll('input[type="checkbox"]:checked'),
-    ).map((checkbox) => Number(checkbox.dataset.id));
-
-    const basketItems = Array.from(
-      document.querySelectorAll('input[type="checkbox"]'),
-    ).map((checkbox) => Number(checkbox.dataset.id));
-
     try {
       const res = await fetch(`/api/basket/makeOrder`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
         },
-        body: JSON.stringify({ selectedItems, basketItems }),
       });
 
       const data = await res.json();
       if (data.message === 'success') {
         alert('Заказ оформлен!');
 
-        if (selectedItems.length === basketItems.length) {
-          const newOrderContainer = document.querySelector('.newOrder');
-          newOrderContainer.innerHTML =
-            '<p>Корзина</p><div>Корзина пуста</div>';
-        } else {
-          selectedItems.forEach((id) => {
-            const item = document.querySelector(`input[data-id="${id}"]`);
-            if (item) {
-              item.parentElement.remove();
-            }
-          });
-        }
+        const newOrderContainer = document.querySelector('.newOrder');
+        newOrderContainer.innerHTML = '<p>Корзина</p><div>Корзина пуста</div>';
 
         const completedOrdersContainer =
           document.querySelector('.completedOrders');
@@ -69,8 +50,6 @@ if (form) {
         newOrderElement.className = 'orders';
         newOrderElement.innerHTML = `<p>Заказ: ${data.orderId} в обработке...</p>`;
         completedOrdersContainer.appendChild(newOrderElement);
-      } else if (data.message === 'empty') {
-        alert('Выберите товары!');
       } else {
         alert(data.message);
       }
@@ -79,3 +58,27 @@ if (form) {
     }
   });
 }
+
+document.querySelectorAll('.removeItemButton').forEach((button) => {
+  button.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const id = e.target.dataset.id;
+
+    try {
+      const res = await fetch(`/api/basket/removeItem/${id}`, {
+        method: 'DELETE',
+      });
+
+      const data = await res.json();
+      if (data.message === 'success') {
+        alert('Товар удален из корзины');
+        e.target.parentElement.remove();
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  });
+});
