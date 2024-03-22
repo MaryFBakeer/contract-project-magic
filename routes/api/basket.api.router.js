@@ -2,6 +2,56 @@ const router = require('express').Router();
 
 const { Basket, Order, Order_line, Card } = require('../../db/models');
 
+router.post('/makeOrder', async (req, res) => {
+  try {
+    const { selectedItems, basketItems } = req.body;
+
+    const order = await Order.findOne({
+      where: {
+        basket_id: res.locals.user.id,
+        status: false,
+      },
+    });
+
+    if (selectedItems.length === 0) {
+      res.json({ message: 'empty' });
+      return;
+    }
+
+    if (selectedItems.length === basketItems.length) {
+      await Order.update(
+        {
+          status: true,
+        },
+        {
+          where: { id: order.id },
+        },
+      );
+      res.json({
+        message: 'success',
+        orderId: order.id,
+        totalPrice: order.total_price,
+      });
+    } else {
+      const newOrder = await Order.create({
+        basket_id: res.locals.user.id,
+        status: true,
+      });
+
+      for (let id of selectedItems) {
+        await Order_line.update({ order_id: newOrder.id }, { where: { id } });
+      }
+
+      const totalPrice = await Order_line.sum('price', {
+        where: { order_id: newOrder.id },
+      });
+      res.json({ message: 'success', orderId: newOrder.id, totalPrice });
+    }
+  } catch ({ message }) {
+    res.status(200).json({ error: message });
+  }
+});
+
 router.post('/add', async (req, res) => {
   try {
     const { id } = req.body;
