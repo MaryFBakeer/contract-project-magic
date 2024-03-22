@@ -15,7 +15,7 @@ if (container) {
           body: JSON.stringify({ id }),
         });
         const data = await res.json();
-        if (data.message == 'success') {
+        if (data.message === 'success') {
           alert('Товар добавлен в заказ');
         }
       } catch (error) {
@@ -29,9 +29,13 @@ if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const data = new FormData(form);
-    const obj = {};
-    data.forEach((value, key) => (obj[key] = value));
+    const selectedItems = Array.from(
+      document.querySelectorAll('input[type="checkbox"]:checked'),
+    ).map((checkbox) => Number(checkbox.dataset.id));
+
+    const basketItems = Array.from(
+      document.querySelectorAll('input[type="checkbox"]'),
+    ).map((checkbox) => Number(checkbox.dataset.id));
 
     try {
       const res = await fetch(`/api/basket/makeOrder`, {
@@ -39,11 +43,36 @@ if (form) {
         headers: {
           'content-type': 'application/json',
         },
-        body: JSON.stringify(obj),
+        body: JSON.stringify({ selectedItems, basketItems }),
       });
+
       const data = await res.json();
-      if (data.message == 'success') {
-        alert('Заказ оформлен');
+      if (data.message === 'success') {
+        alert('Заказ оформлен!');
+
+        if (selectedItems.length === basketItems.length) {
+          const newOrderContainer = document.querySelector('.newOrder');
+          newOrderContainer.innerHTML =
+            '<p>Корзина</p><div>Корзина пуста</div>';
+        } else {
+          selectedItems.forEach((id) => {
+            const item = document.querySelector(`input[data-id="${id}"]`);
+            if (item) {
+              item.parentElement.remove();
+            }
+          });
+        }
+
+        const completedOrdersContainer =
+          document.querySelector('.completedOrders');
+        const newOrderElement = document.createElement('div');
+        newOrderElement.className = 'orders';
+        newOrderElement.innerHTML = `<p>Заказ: ${data.orderId} в обработке...</p>`;
+        completedOrdersContainer.appendChild(newOrderElement);
+      } else if (data.message === 'empty') {
+        alert('Выберите товары!');
+      } else {
+        alert(data.message);
       }
     } catch (error) {
       alert(error.message);
