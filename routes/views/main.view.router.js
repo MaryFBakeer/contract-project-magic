@@ -14,8 +14,9 @@ router.get('/', async (req, res) => {
   try {
     const { user } = res.app.locals;
     const cards = await Card.findAll();
+    const owner = await User.findAll()
     res.send(
-      res.renderComponent(MainPage, { user, title: 'Главная страница', cards, cities, classForm: 'cityFilter' })
+      res.renderComponent(MainPage, { user, title: 'Главная страница', cards, cities, classForm: 'cityFilter', owner })
     );
   } catch ({ message }) {
     res.status(200).json({ error: message });
