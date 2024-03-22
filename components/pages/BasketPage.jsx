@@ -9,20 +9,22 @@ function BasketPage({ title, user, newOrder, completedOrders }) {
         {newOrder ? (
           <div className='orders'>
             <div className='cards'>
-              <p className='gjhj'>
+              <p>
                 Заказ: {newOrder.id} | Общая стоимость: {newOrder.total_price}
               </p>
               <form className='makeOrder'>
                 {newOrder.Order_lines.map((card) => (
                   <div>
-                    <input
-                      type='checkbox'
-                      className='order_line'
-                      data-id={card.id}
-                    />
                     <label htmlFor='order_line'>
                       Товар: {card.Card.title} | Кол-во: {card.count}
                     </label>
+                    <button
+                      type='button'
+                      className='removeItemButton'
+                      data-id={card.id}
+                    >
+                      Удалить товар
+                    </button>
                   </div>
                 ))}
                 <button className='makeOrderButton'>Заказать</button>

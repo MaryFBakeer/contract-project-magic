@@ -2,10 +2,29 @@ const router = require('express').Router();
 
 const { Basket, Order, Order_line, Card } = require('../../db/models');
 
+router.delete('/removeItem/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const item = await Order_line.findOne({
+      where: { id },
+    });
+
+    if (!item) {
+      res.status(404).json({ message: 'Товар не найден' });
+      return;
+    }
+
+    await Order_line.destroy({ where: { id } });
+
+    res.json({ message: 'success' });
+  } catch ({ message }) {
+    res.status(500).json({ message: 'error', error: message });
+  }
+});
+
 router.post('/makeOrder', async (req, res) => {
   try {
-    const { selectedItems, basketItems } = req.body;
-
     const order = await Order.findOne({
       where: {
         basket_id: res.locals.user.id,
@@ -13,42 +32,27 @@ router.post('/makeOrder', async (req, res) => {
       },
     });
 
-    if (selectedItems.length === 0) {
-      res.json({ message: 'empty' });
+    if (!order) {
+      res.status(404).json({ message: 'Заказ не найден' });
       return;
     }
 
-    if (selectedItems.length === basketItems.length) {
-      await Order.update(
-        {
-          status: true,
-        },
-        {
-          where: { id: order.id },
-        },
-      );
-      res.json({
-        message: 'success',
-        orderId: order.id,
-        totalPrice: order.total_price,
-      });
-    } else {
-      const newOrder = await Order.create({
-        basket_id: res.locals.user.id,
+    await Order.update(
+      {
         status: true,
-      });
+      },
+      {
+        where: { id: order.id },
+      },
+    );
 
-      for (let id of selectedItems) {
-        await Order_line.update({ order_id: newOrder.id }, { where: { id } });
-      }
-
-      const totalPrice = await Order_line.sum('price', {
-        where: { order_id: newOrder.id },
-      });
-      res.json({ message: 'success', orderId: newOrder.id, totalPrice });
-    }
+    res.json({
+      message: 'success',
+      orderId: order.id,
+      totalPrice: order.total_price,
+    });
   } catch ({ message }) {
-    res.status(200).json({ error: message });
+    res.status(500).json({ error: message });
   }
 });
 
