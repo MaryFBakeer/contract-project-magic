@@ -20,10 +20,12 @@ body {
   justify-content: space-around;
   margin: 0;
 }
+
 .navbar-user,
 .navbar-reg {
   display: flex;
-  /* justify-content: space-around; */
+  justify-content: center;
+  align-items: center;
 }
 
 .logo,
@@ -51,4 +53,3 @@ body {
 .navbar-reg a:hover {
   color: rgba(191, 26, 224, 0.788);
 }
-

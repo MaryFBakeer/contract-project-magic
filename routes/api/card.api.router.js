@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(req.params);
+    console.log(req.params, '<-----------------------');
     //IDOR
     const result = await Card.destroy({
       where: { id, user_id: res.locals.user.id },

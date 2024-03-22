@@ -37,13 +37,13 @@ if (formAddCard) {
   });
 }
 
+console.log(containerCard);
 if (containerCard) {
   containerCard.addEventListener('click', async (event) => {
     if (event.target.classList.contains('btn-delete')) {
       const card = event.target.closest('.cardItem');
-      const { cardid } = card.dataset;
-
-      const responce = await fetch(`/api/card/${cardid}`, { method: 'DELETE' });
+      const { id } = card.dataset;
+      const responce = await fetch(`/api/card/${id}`, { method: 'DELETE' });
       const res = await responce.json();
       if (res.message === 'success') {
         alert('Успешно удалено');
