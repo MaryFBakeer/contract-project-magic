@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     try {
         const user = res.locals.user
       res.send(
-        res.renderComponent(err, { user})
+        res.renderComponent(err, {user})
       )
     } catch ({ message }) {
       res.status(200).json({ error: message });
